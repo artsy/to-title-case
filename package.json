@@ -1,10 +1,15 @@
 {
   "name": "@itretyak/my-test-package",
-  "version": "1.0.0",
-  "description": "Title case text (Chicago style)",
-  "main": "index.js",
+  "version": "1.0.1",
+  "description": "Capitalizes your titles as per The Chicago Manual of Style",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rm -rf dist",
+    "build": "yarn clean && tsc -p .",
+    "prepublishOnly": "yarn build",
+    "watch": "tsc -w -p .",
+    "test": "jest",
+    "lint": "tslint -c tslint.json --project tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -14,10 +19,37 @@
     "capitalize",
     "chicago"
   ],
-  "author": "",
+  "author": "Dima Tretyak <itretyak@ya.ru>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/dimatretyak/my-test-package/issues"
   },
-  "homepage": "https://github.com/dimatretyak/my-test-package#readme"
+  "homepage": "https://github.com/dimatretyak/my-test-package#readme",
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "@types/lodash.deburr": "^4.1.6",
+    "@types/lodash.isnumber": "^3.0.6",
+    "@types/lodash.upperfirst": "^4.3.6",
+    "jest": "^27.0.6",
+    "prettier": "^2.3.2",
+    "ts-jest": "^27.0.5",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.3.5"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": false,
+    "trailingComma": "es5",
+    "bracketSpacing": true
+  },
+  "dependencies": {
+    "lodash.deburr": "^4.1.0",
+    "lodash.isnumber": "^3.0.3",
+    "lodash.upperfirst": "^4.3.1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  }
 }
