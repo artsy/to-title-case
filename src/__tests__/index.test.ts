@@ -1,11 +1,11 @@
 import { isAllCapitalized, isIrregularCapitalized, toTitleCase } from ".."
 
 describe("dsa", () => {
-    expect(isAllCapitalized("HELLO WORLD")).toBeTruthy()
-    expect(isAllCapitalized("HELLO_WORLD")).toBeTruthy()
-    expect(isAllCapitalized("Hello World")).toBeFalsy()
-    expect(isAllCapitalized("HELLO World")).toBeFalsy()
-    expect(isAllCapitalized("hello world")).toBeFalsy()
+  expect(isAllCapitalized("HELLO WORLD")).toBeTruthy()
+  expect(isAllCapitalized("HELLO_WORLD")).toBeTruthy()
+  expect(isAllCapitalized("Hello World")).toBeFalsy()
+  expect(isAllCapitalized("HELLO World")).toBeFalsy()
+  expect(isAllCapitalized("hello world")).toBeFalsy()
 })
 
 describe("Title Case Text", () => {
@@ -38,7 +38,11 @@ describe("Title Case Text", () => {
     expect(toTitleCase("new union gallery")).toBe("New Union Gallery")
     expect(toTitleCase("123 456 789")).toBe("123 456 789")
     expect(toTitleCase("who are so beguiled")).toBe("Who Are So Beguiled")
-    expect(toTitleCase("Lorem Ipsum Is Simply Dummy Text of the Printing and Typesetting Industry")).toBe(
+    expect(
+      toTitleCase(
+        "Lorem Ipsum Is Simply Dummy Text of the Printing and Typesetting Industry"
+      )
+    ).toBe(
       "Lorem Ipsum Is Simply Dummy Text of the Printing and Typesetting Industry"
     )
   })
@@ -47,7 +51,9 @@ describe("Title Case Text", () => {
     expect(toTitleCase("first World")).toBe("First World")
     expect(toTitleCase("end to end gallery")).toBe("End to End Gallery")
     expect(toTitleCase("large (Over 100)")).toBe("Large (over 100)")
-    expect(toTitleCase("artsy X capsule auctions")).toBe("Artsy x Capsule Auctions")
+    expect(toTitleCase("artsy X capsule auctions")).toBe(
+      "Artsy x Capsule Auctions"
+    )
   })
 
   it("should format the special characters correctly", () => {
@@ -68,7 +74,9 @@ describe("Title Case Text", () => {
   })
 
   it("don't change the capital words", () => {
-    expect(toTitleCase("HOFA gallery (house of fine art)")).toBe("HOFA Gallery (House of Fine Art)")
+    expect(toTitleCase("HOFA gallery (house of fine art)")).toBe(
+      "HOFA Gallery (House of Fine Art)"
+    )
     expect(toTitleCase("HoFa gallery")).toBe("HoFa Gallery")
     expect(toTitleCase("eHDC gallery")).toBe("eHDC Gallery")
   })
