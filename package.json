@@ -1,0 +1,23 @@
+{
+  "name": "@itretyak/my-test-package",
+  "version": "1.0.0",
+  "description": "Title case text (Chicago style)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimatretyak/my-test-package.git"
+  },
+  "keywords": [
+    "capitalize",
+    "chicago"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dimatretyak/my-test-package/issues"
+  },
+  "homepage": "https://github.com/dimatretyak/my-test-package#readme"
+}
