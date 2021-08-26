@@ -40,6 +40,10 @@ export const isAllCapitalized = (word: string) => {
   return word.toUpperCase() === word
 }
 
+export const isSpaceCharacter = (word: string) => {
+  return /^\s$/.test(word)
+}
+
 /**
  * Checks for irregular capitalization
  *
@@ -67,12 +71,16 @@ export const toTitleCase = (text: string) => {
     return text
   }
 
-  return text.replace(ONLY_WORDS_REGEX, (word) => {
+  return text.replace(ONLY_WORDS_REGEX, (word, index) => {
     const lowercaseWord = word.toLowerCase()
     counter += 1
 
-    // Lowercase "x" in "Artsy X Capsule auctions" cases
-    if (counter > 1 && lowercaseWord === "x") {
+    // Lowercase "x" in "Artsy X Capsule auctions" case
+    if (
+      lowercaseWord === "x" &&
+      isSpaceCharacter(text[index - 1]) &&
+      isSpaceCharacter(text[index + word.length])
+    ) {
       return lowercaseWord
     }
 
