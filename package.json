@@ -11,7 +11,8 @@
     "test": "jest",
     "lint": "tslint -c tslint.json --project tsconfig.json",
     "prepare": "husky install",
-    "type-check": "tsc --noEmit --pretty"
+    "type-check": "tsc --noEmit --pretty",
+    "release": "auto shipit"
   },
   "repository": {
     "type": "git",
@@ -28,10 +29,12 @@
   },
   "homepage": "https://github.com/artsy/to-title-case#readme",
   "devDependencies": {
+    "@artsy/auto-config": "^1.0.2",
     "@types/jest": "^27.0.1",
     "@types/lodash.deburr": "^4.1.6",
     "@types/lodash.isnumber": "^3.0.6",
     "@types/lodash.upperfirst": "^4.3.6",
+    "auto": "^10.31.0",
     "husky": ">=6",
     "jest": "^27.0.6",
     "lint-staged": ">=10",
