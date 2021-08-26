@@ -1,6 +1,6 @@
 {
-  "name": "@itretyak/my-test-package",
-  "version": "1.0.2",
+  "name": "@artsy/to-title-case",
+  "version": "1.0.0",
   "description": "Capitalizes your titles as per The Chicago Manual of Style",
   "main": "dist/index.js",
   "scripts": {
@@ -15,18 +15,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dimatretyak/my-test-package.git"
+    "url": "git+https://github.com/artsy/to-title-case.git"
   },
   "keywords": [
     "capitalize",
     "chicago"
   ],
-  "author": "Dima Tretyak <itretyak@ya.ru>",
+  "author": "Art.sy Inc <it@artsymail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dimatretyak/my-test-package/issues"
+    "url": "https://github.com/artsy/to-title-case/issues"
   },
-  "homepage": "https://github.com/dimatretyak/my-test-package#readme",
+  "homepage": "https://github.com/artsy/to-title-case#readme",
   "devDependencies": {
     "@types/jest": "^27.0.1",
     "@types/lodash.deburr": "^4.1.6",
