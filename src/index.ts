@@ -13,7 +13,7 @@ import upperFirst from "lodash.upperfirst"
  * hang-up Gallery -> ["hang", "up", "Gallery"]
  * $Whatever space -> ["Whatever", "space"]
  */
-const ONLY_WORDS_REGEX = /[^!@#\$%\^\&*\)\(+=.\-\s,\[\]\/\"]+/g
+const ONLY_WORDS_REGEX = /[^!@#\$%\^\&*\)\(+=.\-\s,\[\]\/\"\?]+/g
 export const alwaysLowercaseWords = [
   "and",
   "or",
