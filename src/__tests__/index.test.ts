@@ -1,36 +1,71 @@
 import { isAllCapitalized, isIrregularCapitalized, toTitleCase } from ".."
 
-describe("dsa", () => {
-  expect(isAllCapitalized("HELLO WORLD")).toBeTruthy()
-  expect(isAllCapitalized("HELLO_WORLD")).toBeTruthy()
-  expect(isAllCapitalized("Hello World")).toBeFalsy()
-  expect(isAllCapitalized("HELLO World")).toBeFalsy()
-  expect(isAllCapitalized("hello world")).toBeFalsy()
-})
-
-describe("Title Case Text", () => {
-  it("should correctly check all capitalized words", () => {
+describe("isAllCapitalized", () => {
+  it("returns true if all characters are capitalized", () => {
     expect(isAllCapitalized("HELLO WORLD")).toBeTruthy()
+  })
+
+  it("returns true if all characters are capitalized and there are special characters", () => {
     expect(isAllCapitalized("HELLO_WORLD")).toBeTruthy()
+  })
+
+  it("returns false if there are lowercase characters", () => {
     expect(isAllCapitalized("Hello World")).toBeFalsy()
+  })
+
+  it("returns false if only some words are uppercase", () => {
     expect(isAllCapitalized("HELLO World")).toBeFalsy()
+  })
+
+  it("returns false if all characters are lowercased", () => {
     expect(isAllCapitalized("hello world")).toBeFalsy()
   })
+})
 
-  it("should correctly check irregular capitalization", () => {
+describe("isIrregularCapitalized", () => {
+  it("returns false if all characters are lowercased", () => {
     expect(isIrregularCapitalized("hello")).toBeFalsy()
-    expect(isIrregularCapitalized("hello user")).toBeFalsy()
-    expect(isIrregularCapitalized("HELLO")).toBeFalsy()
-    expect(isIrregularCapitalized("hello 123")).toBeFalsy()
-    expect(isIrregularCapitalized("helloà")).toBeFalsy()
-    expect(isIrregularCapitalized("hellO")).toBeTruthy()
-    expect(isIrregularCapitalized("first_naMe")).toBeTruthy()
-    expect(isIrregularCapitalized("heLlo UsEr")).toBeTruthy()
-    expect(isIrregularCapitalized("aBcDe")).toBeTruthy()
-    expect(isIrregularCapitalized("hellO 123")).toBeTruthy()
-    expect(isIrregularCapitalized("helloàÀÂÄÈÉÊËÎÏÔŒÙÛÜŸÇ")).toBeTruthy()
   })
 
+  it("returns false if all words are lowercased", () => {
+    expect(isIrregularCapitalized("hello user")).toBeFalsy()
+  })
+
+  it("returns false if all characters are capitalized", () => {
+    expect(isIrregularCapitalized("HELLO")).toBeFalsy()
+  })
+
+  it("returns false if all characters are lowercased and there are numbers", () => {
+    expect(isIrregularCapitalized("hello 123")).toBeFalsy()
+  })
+
+  it("returns false if all latin characters are lowercased", () => {
+    expect(isIrregularCapitalized("helloààâäèéêëîïôœùûüÿç")).toBeFalsy()
+  })
+
+  it("returns true if some characters are capitalized", () => {
+    expect(isIrregularCapitalized("hellO")).toBeTruthy()
+    expect(isIrregularCapitalized("aBcDe")).toBeTruthy()
+  })
+
+  it("returns true if some words are capitalized", () => {
+    expect(isIrregularCapitalized("heLlo UsEr")).toBeTruthy()
+  })
+
+  it("returns true if some characters are capitalized and there are special characters", () => {
+    expect(isIrregularCapitalized("first_naMe")).toBeTruthy()
+  })
+
+  it("returns true if some characters are capitalized and there are numbers", () => {
+    expect(isIrregularCapitalized("hellO 123")).toBeTruthy()
+  })
+
+  it("returns true if some latin characters are capitalized", () => {
+    expect(isIrregularCapitalized("helloàÀÂÄÈÉÊËÎÏÔŒÙÛÜŸÇ")).toBeTruthy()
+  })
+})
+
+describe("toTitleCase", () => {
   it("should format the text correctly", () => {
     expect(toTitleCase("hello world")).toBe("Hello World")
     expect(toTitleCase("musée picasso")).toBe("Musée Picasso")
@@ -40,7 +75,7 @@ describe("Title Case Text", () => {
     expect(toTitleCase("who are so beguiled")).toBe("Who Are So Beguiled")
     expect(
       toTitleCase(
-        "Lorem Ipsum Is Simply Dummy Text of the Printing and Typesetting Industry"
+        "lorem ipsum is simply dummy text of the printing and typesetting industry"
       )
     ).toBe(
       "Lorem Ipsum Is Simply Dummy Text of the Printing and Typesetting Industry"
@@ -53,6 +88,9 @@ describe("Title Case Text", () => {
     expect(toTitleCase("large (Over 100)")).toBe("Large (over 100)")
     expect(toTitleCase("artsy X capsule auctions")).toBe(
       "Artsy x Capsule Auctions"
+    )
+    expect(toTitleCase("one x two X three X four x")).toBe(
+      "One x Two x Three x Four X"
     )
   })
 
