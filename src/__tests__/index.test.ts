@@ -73,6 +73,7 @@ describe("toTitleCase", () => {
     expect(toTitleCase("new union gallery")).toBe("New Union Gallery")
     expect(toTitleCase("123 456 789")).toBe("123 456 789")
     expect(toTitleCase("who are so beguiled")).toBe("Who Are So Beguiled")
+    expect(toTitleCase("foo A bar")).toBe("Foo a Bar")
     expect(
       toTitleCase(
         "lorem ipsum is simply dummy text of the printing and typesetting industry"
