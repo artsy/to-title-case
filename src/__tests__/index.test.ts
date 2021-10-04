@@ -73,6 +73,9 @@ describe("toTitleCase", () => {
     expect(toTitleCase("new union gallery")).toBe("New Union Gallery")
     expect(toTitleCase("123 456 789")).toBe("123 456 789")
     expect(toTitleCase("who are so beguiled")).toBe("Who Are So Beguiled")
+    expect(toTitleCase("Foo In Bar")).toBe("Foo in Bar")
+    expect(toTitleCase("Foo By Bar")).toBe("Foo by Bar")
+    expect(toTitleCase("Foo Off Bar")).toBe("Foo off Bar")
     expect(
       toTitleCase(
         "lorem ipsum is simply dummy text of the printing and typesetting industry"

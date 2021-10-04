@@ -34,6 +34,9 @@ export const alwaysLowercaseWords = [
   "during",
   "without",
   "on",
+  "in",
+  "by",
+  "off",
 ]
 
 export const isAllCapitalized = (word: string) => {
