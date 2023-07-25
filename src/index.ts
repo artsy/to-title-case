@@ -37,10 +37,11 @@ export const alwaysLowercaseWords = [
   "in",
   "by",
   "off",
+  "x",
 ]
 
 export const isAllCapitalized = (word: string) => {
-  return word.toUpperCase() === word
+  return word.toUpperCase() === word && word.length > 1
 }
 
 export const isSpaceCharacter = (word: string) => {
@@ -77,15 +78,6 @@ export const toTitleCase = (text: string) => {
   return text.replace(ONLY_WORDS_REGEX, (word, index) => {
     const lowercaseWord = word.toLowerCase()
     counter += 1
-
-    // Lowercase "x" in "Artsy X Capsule auctions" case
-    if (
-      lowercaseWord === "x" &&
-      isSpaceCharacter(text[index - 1]) &&
-      isSpaceCharacter(text[index + word.length])
-    ) {
-      return lowercaseWord
-    }
 
     /**
      * We don't change:
