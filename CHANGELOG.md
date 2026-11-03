@@ -1,3 +1,15 @@
+# v1.2.1 (Tue Nov 03 2026)
+
+#### 🐛  Bug Fix
+
+- chore(ci): bump artsy/auto orb for npm trusted publishing [#17](https://github.com/artsy/to-title-case/pull/17) ([@zapraum](https://github.com/zapraum))
+
+#### Authors: 1
+
+- Rodrigo ([@zapraum](https://github.com/zapraum))
+
+---
+
 # v1.2.0 (Wed Nov 19 2025)
 
 #### 🚀  Enhancement
